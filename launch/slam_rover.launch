@@ -1,0 +1,45 @@
+<launch>
+    <arg name="port" default="/dev/ttyUSB0"/>
+    <arg name="x" default="0.2"/>
+    <arg name="y" default="-0.2"/>
+    <arg name="z" default="1.57"/>
+
+    <node pkg="ros_plain_serial" name="ros_serial_TF2" type="ros_serial_TF2.py" required="true">
+        <param name="port" value="$(arg port)"/>
+        <remap from="/plain_serial/cmd_vel" to="/cmd_vel"/>
+        <remap from="/plain_serial/odometry" to="/odometry"/>
+    </node>
+
+    <node pkg="joy" name="joy_node" type="joy_node" required="true" output="screen"/>
+    <node pkg="ros_mecanum_robot" name="joy_converter" type="joy_converter.py" required="true">
+        <param name="x" value="$(arg x)"/>
+        <param name="y" value="$(arg y)"/>
+        <param name="z" value="$(arg z)"/>
+    </node>
+ 
+    <node pkg="urg_node" name="urg_node" type="urg_node" required="true">
+        <param name="frame_id" value="base_link"/>
+    </node>
+ 
+    <arg name="scan_topic" default="/scan"/>
+    <arg name="odom_topic" default="/odometry"/>
+ 
+    <node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" output="screen">
+        <param name="base_frame" value="base_link"/>
+        <param name="odom_frame" value="ps_odom"/>
+ 
+        <param name="maxUrange" value="4.0"/>
+        <param name="maxRange" value="4.0" />
+ 
+        <!--直進1mあたりの直進方向の誤差[m]-->
+        <param name="srr" value="0.3"/>
+        <!--回転1radあたりの直進方向の誤差[m]-->
+        <param name="srt" value="0.1"/>
+        <!--直進1mあたりの回転方向の誤差[rad]-->
+        <param name="str" value="0.1"/>
+        <!--回転1radあたりの回転方向の誤差[rad]-->
+        <param name="stt" value="0.3"/>
+ 
+        <param name="particles" value="100"/>
+    </node>
+</launch>

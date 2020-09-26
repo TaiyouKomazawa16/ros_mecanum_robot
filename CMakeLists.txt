@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
   ros_plain_serial
   rospy
   sensor_msgs
+  gmapping
+  joy
 )
 
 ## System dependencies are found with CMake's conventions

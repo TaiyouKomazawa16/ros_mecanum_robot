@@ -10,6 +10,9 @@
         <remap from="/plain_serial/odometry" to="/odometry"/>
     </node>
 
+    <!--urg測域センサが車体前方100mmに位置するため。TF2のフレームをbase_link以下に配置-->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="urg_sensor" args="0.1 0 0 0 0 0 1 base_link urg_sensor"/>
+
     <node pkg="joy" name="joy_node" type="joy_node" required="true" output="screen"/>
     <node pkg="ros_mecanum_robot" name="joy_converter" type="joy_converter.py" required="true">
         <param name="x" value="$(arg x)"/>
@@ -18,7 +21,7 @@
     </node>
  
     <node pkg="urg_node" name="urg_node" type="urg_node" required="true">
-        <param name="frame_id" value="base_link"/>
+        <param name="frame_id" value="urg_sensor"/>
     </node>
  
     <arg name="scan_topic" default="/scan"/>

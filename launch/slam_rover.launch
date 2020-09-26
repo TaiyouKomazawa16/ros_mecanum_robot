@@ -4,6 +4,9 @@
     <arg name="y" default="-0.2"/>
     <arg name="z" default="1.57"/>
 
+    <!--mapフレーム未発行による警告の抑制-->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="world_map" args="0 0 0 0 0 0 map frame"/>
+
     <node pkg="ros_plain_serial" name="ros_serial_TF2" type="ros_serial_TF2.py" required="true">
         <param name="port" value="$(arg port)"/>
         <remap from="/plain_serial/cmd_vel" to="/cmd_vel"/>

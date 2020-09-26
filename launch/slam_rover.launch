@@ -36,16 +36,27 @@
  
         <param name="maxUrange" value="4.0"/>
         <param name="maxRange" value="4.0" />
+
+        <param name="map_update_interval" value="1.0"/>
+        <param name="linearUpdate" value="1.0"/>
+        <param name="angularUpdate" value="0.2"/>
+        <param name="temporalUpdate" value="1.0"/>
+
+        <param name="xmin" value="-15.0"/>
+        <param name="ymin" value="-15.0"/>
+        <param name="xmax" value="15.0"/>
+        <param name="ymax" value="15.0"/>
+        <param name="delta" value="0.05"/>
  
         <!--直進1mあたりの直進方向の誤差[m]-->
-        <param name="srr" value="0.3"/>
+        <param name="srr" value="0.1"/>
         <!--回転1radあたりの直進方向の誤差[m]-->
         <param name="srt" value="0.1"/>
         <!--直進1mあたりの回転方向の誤差[rad]-->
         <param name="str" value="0.1"/>
         <!--回転1radあたりの回転方向の誤差[rad]-->
-        <param name="stt" value="0.3"/>
+        <param name="stt" value="0.1"/>
  
-        <param name="particles" value="100"/>
+        <param name="particles" value="500"/>
     </node>
 </launch>

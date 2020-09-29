@@ -1,0 +1,17 @@
+<launch>
+    <!--x= Range of cmd_vel(Twist).linear.x[m/s]-->
+    <arg name="x" default="0.3"/>
+    <!--y= Range of cmd_vel(Twist).linear.y[m/s]-->
+    <arg name="y" default="-0.3"/>
+    <!--z= Range of cmd_vel(Twist).angular.z[m/s]-->
+    <arg name="z" default="1.57"/>
+
+    <include file="$(find ros_ps_rover_base)/launch/util/base.launch">
+        <arg name="port" value="/dev/ttyUSB0"/>
+    </include>
+    <include file="$(find ros_ps_rover_base)/launch/util/joy_cmd_vel.launch">
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+    </include>
+</launch>

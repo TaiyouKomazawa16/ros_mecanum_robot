@@ -56,6 +56,8 @@
   <build_depend>sensor_msgs</build_depend>
   <build_depend>gmapping</build_depend>
   <build_depend>joy</build_depend>
+  <build_depend>urg_node</build_depend>
+  <build_depend>tf2_ros</build_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
   <build_export_depend>nav_msgs</build_export_depend>
   <build_export_depend>ros_plain_serial</build_export_depend>
@@ -63,6 +65,8 @@
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>gmapping</build_export_depend>
   <build_export_depend>joy</build_export_depend>
+  <build_export_depend>urg_node</build_export_depend>
+  <build_export_depend>tf2_ros</build_export_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>nav_msgs</exec_depend>
   <exec_depend>ros_plain_serial</exec_depend>
@@ -70,7 +74,9 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>gmapping</exec_depend>
   <exec_depend>joy</exec_depend>
-
+  <exec_depend>urg_node</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

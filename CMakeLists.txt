@@ -15,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   gmapping
   joy
+  urg_node
+  tf2_ros
 )
 
 ## System dependencies are found with CMake's conventions

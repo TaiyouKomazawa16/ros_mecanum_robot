@@ -2,7 +2,7 @@
     <!--x= Range of cmd_vel(Twist).linear.x[m/s]-->
     <arg name="x" default="0.3"/>
     <!--y= Range of cmd_vel(Twist).linear.y[m/s]-->
-    <arg name="y" default="-0.3"/>
+    <arg name="y" default="0.3"/>
     <!--z= Range of cmd_vel(Twist).angular.z[m/s]-->
     <arg name="z" default="1.57"/>
 

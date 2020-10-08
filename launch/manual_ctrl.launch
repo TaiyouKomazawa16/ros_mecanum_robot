@@ -6,11 +6,17 @@
     <!--z= Range of cmd_vel(Twist).angular.z[m/s]-->
     <arg name="z" default="1.57"/>
 
+    <arg name="use_joy" default="true"/>
+
     <include file="$(find ros_ps_rover_base)/launch/util/base.launch"/>
 
-    <include file="$(find ros_ps_rover_base)/launch/util/joy_cmd_vel.launch">
-        <arg name="x" value="$(arg x)"/>
-        <arg name="y" value="$(arg y)"/>
-        <arg name="z" value="$(arg z)"/>
-    </include>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="map" args="0 0 0 0 0 0 1 map ps_odom"/>
+    <group if="$(arg use_joy)">
+        <include file="$(find ros_ps_rover_base)/launch/util/joy_cmd_vel.launch">
+            <arg name="x" value="$(arg x)"/>
+            <arg name="y" value="$(arg y)"/>
+            <arg name="z" value="$(arg z)"/>
+        </include>
+    </group>
+    
 </launch>

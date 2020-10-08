@@ -55,6 +55,7 @@
   <depend>rospy</depend>
   <depend>joy</depend>
   <depend>tf2_ros</depend>
+  <depend>robot_localization</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

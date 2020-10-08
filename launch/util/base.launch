@@ -1,8 +1,5 @@
 <launch>
-    <arg name="port" default="/dev/ttyUSB0"/>
-    <node pkg="ros_plain_serial" name="ros_serial_TF2" type="ros_serial_TF2.py" required="true" output="screen">
-        <param name="port" value="$(arg port)"/>
-        <remap from="/plain_serial/cmd_vel" to="/cmd_vel"/>
-        <remap from="/plain_serial/odometry" to="/odometry"/>
-    </node>
+    <include file="$(find ros_plain_serial)/launch/plain_serial.launch"/>
+    <include file="$(find ros_ps_rover_base)/launch/util/ekf_sensor.launch"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="map" args="0 0 0 0 0 0 1 base_link imu_link"/>
 </launch>

@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   joy
   tf2_ros
+  robot_localization
 )
 
 ## System dependencies are found with CMake's conventions

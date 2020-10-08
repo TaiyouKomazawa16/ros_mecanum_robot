@@ -6,9 +6,8 @@
     <!--z= Range of cmd_vel(Twist).angular.z[m/s]-->
     <arg name="z" default="1.57"/>
 
-    <include file="$(find ros_ps_rover_base)/launch/util/base.launch">
-        <arg name="port" value="/dev/ttyUSB0"/>
-    </include>
+    <include file="$(find ros_ps_rover_base)/launch/util/base.launch"/>
+
     <include file="$(find ros_ps_rover_base)/launch/util/joy_cmd_vel.launch">
         <arg name="x" value="$(arg x)"/>
         <arg name="y" value="$(arg y)"/>

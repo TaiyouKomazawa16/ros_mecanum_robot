@@ -15,6 +15,8 @@ find_package(catkin REQUIRED COMPONENTS
   joy
   tf2_ros
   robot_localization
+  realsense2_camera
+  urg_node
 )
 
 ## System dependencies are found with CMake's conventions

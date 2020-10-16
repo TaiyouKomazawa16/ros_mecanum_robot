@@ -1,5 +1,13 @@
 <launch>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="map"    args="0 0 0 0 0 0 1 map odom"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="rs_cam" args="0.15 0 0.18 0 0 0 1 base_link camera_link"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="imu"    args="0 0 0.17 0 0 0 1 base_link imu_link"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="urg"    args="0.1 0 0.21 0 0 0 1 base_link urg_sensor"/>
+
     <include file="$(find ros_plain_serial)/launch/plain_serial.launch"/>
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
     <include file="$(find ros_ps_rover_base)/launch/util/ekf_sensor.launch"/>
-    <node pkg="tf2_ros" type="static_transform_publisher" name="imu" args="0 0 0.07 0 0 0 1 base_link imu_link"/>
+    <node pkg="urg_node" name="urg_node" type="urg_node" required="true">
+        <param name="frame_id" value="urg_sensor"/>
+    </node>
 </launch>

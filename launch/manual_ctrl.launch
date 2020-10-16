@@ -10,7 +10,6 @@
 
     <include file="$(find ros_ps_rover_base)/launch/util/base.launch"/>
 
-    <node pkg="tf2_ros" type="static_transform_publisher" name="map" args="0 0 0 0 0 0 1 map ps_odom"/>
     <group if="$(arg use_joy)">
         <include file="$(find ros_ps_rover_base)/launch/util/joy_cmd_vel.launch">
             <arg name="x" value="$(arg x)"/>

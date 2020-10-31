@@ -11,6 +11,7 @@
     <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
     <include file="$(find ros_ps_rover_base)/launch/util/ekf_sensor.launch"/>
     <node pkg="urg_node" name="urg_node" type="urg_node" required="true">
+        <param name="ip_address" value="192.168.0.10"/>
         <param name="frame_id" value="urg_sensor"/>
     </node>
 </launch>

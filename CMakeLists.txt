@@ -17,6 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   robot_localization
   realsense2_camera
   urg_node
+  urdf
 )
 
 ## System dependencies are found with CMake's conventions

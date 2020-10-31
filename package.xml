@@ -58,6 +58,7 @@
   <depend>robot_localization</depend>
   <depend>realsense2_camera</depend>
   <depend>urg_node</depend>
+  <depend>urdf</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

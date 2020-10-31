@@ -4,6 +4,9 @@
     <node pkg="tf2_ros" type="static_transform_publisher" name="imu"    args="0 0 0.17 0 0 0 1 base_link imu_link"/>
     <node pkg="tf2_ros" type="static_transform_publisher" name="urg"    args="0.1 0 0.21 0 0 0 1 base_link urg_sensor"/>
 
+    <param name="robot_description" textfile="$(find ros_ps_rover_base)/model/robot_frame.urdf"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
     <include file="$(find ros_plain_serial)/launch/plain_serial.launch"/>
     <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
     <include file="$(find ros_ps_rover_base)/launch/util/ekf_sensor.launch"/>

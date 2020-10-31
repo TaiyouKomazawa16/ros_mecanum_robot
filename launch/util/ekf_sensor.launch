@@ -1,5 +1,5 @@
 <launch>
-  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true" output="screen">
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_node" clear_params="true" output="screen">
     <param name="frequency" value="30"/>
     <param name="sensor_timeout" value="0.5"/>
     <param name="two_d_mode" value="true"/>
@@ -24,7 +24,7 @@
                                   false,  false,  true,
                                   false, false, false,
                                   false,  false,  true,
-                                  true,  true,  false]</rosparam>
+                                  false,  false,  false]</rosparam>
 
     <param name="odom0_differential" value="false"/>
     <param name="imu0_differential" value="true"/>

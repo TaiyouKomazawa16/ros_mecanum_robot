@@ -34,7 +34,7 @@
   <!-- Use depend as a shortcut for packages that are both build and exec dependencies -->
   <!--   <depend>roscpp</depend> -->
   <!--   Note that this is equivalent to the following: -->
-  <!--   <depend>roscpp</depend> -->
+  <depend>roscpp</depend>
   <!--   <exec_depend>roscpp</exec_depend> -->
   <!-- Use depend for packages you need at compile time: -->
   <!--   <depend>message_generation</depend> -->
@@ -59,7 +59,8 @@
   <depend>realsense2_camera</depend>
   <depend>urg_node</depend>
   <depend>urdf</depend>
-
+  <depend>yocs_velocity_smoother</depend>
+  
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

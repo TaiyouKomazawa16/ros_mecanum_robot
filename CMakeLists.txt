@@ -8,6 +8,7 @@ project(ros_ps_rover_base)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  roscpp
   geometry_msgs
   nav_msgs
   ros_plain_serial
@@ -18,6 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   realsense2_camera
   urg_node
   urdf
+  yocs_velocity_smoother
 )
 
 ## System dependencies are found with CMake's conventions
@@ -211,3 +213,14 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_library(
+ ${PROJECT_NAME} src/position_pid.cpp
+)
+add_executable(
+ position_pid_node src/position_pid.cpp
+)
+target_link_libraries(
+ position_pid_node
+ ${catkin_LIBRARIES}
+)
